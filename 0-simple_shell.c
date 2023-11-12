@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * Betty - Function that prints betty
+ * Main - Function Entry point
  *
  * Return: Always 0 when success
  */
