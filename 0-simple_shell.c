@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- * Main - Function Entry point
+ * main - Function Entry point
  *
  * Return: Always 0 when success
  */
 
 int main(void)
 {
-	printf("Hello, Betty!\n");
+	printf("Hello, Julien!\n");
 	return (0);
 }
