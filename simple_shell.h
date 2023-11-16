@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <main.h>
+#include <simple_shell.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 
