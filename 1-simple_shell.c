@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 /**
- * main - entry point
- *
- * Return: Always 0 when successful
+ * getline - function to rean an entire line from the input stream
+ * @lineptr: pointer to the buffer
+ * @n: size of buffer
+ * @stream: pointer to the input stream
+ * Return: characters number read
  */
 
-int main(void)
+ssize_t getline(char **lineptr, size_t *n, FILE *stream)
 {
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
+	(void)lineptr;
+	(void)n;
+	(void)stream;
 
 	while (1)
 	{
