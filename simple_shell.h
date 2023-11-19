@@ -10,6 +10,11 @@
 #include <sys/wait.h>
 #include <winscard.h>
 int main(void);
+int main2(void);
+int main3(void);
+int main4(void);
+int main5(void);
+int main6(void);
 size_t getline(char **lineptr, size_t *n, FILE *stream);
 int main3(int argc, int **argv);
 void get_command(int argc, char **argv);
