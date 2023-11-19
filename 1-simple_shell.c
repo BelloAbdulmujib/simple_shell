@@ -1,33 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
- * getline - function to rean an entire line from the input stream
- * @lineptr: pointer to the buffer
- * @n: size of buffer
- * @stream: pointer to the input stream
- * Return: characters number read
+ * main1 - entry point
+ *
+ * Return: 0 when successful
  */
-
-ssize_t getline(char **lineptr, size_t *n, FILE *stream)
+int main1(void)
 {
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t nread;
-	(void)lineptr;
-	(void)n;
-	(void)stream;
+	ssize_t read;
+	char *prompt = "$ ";
 
 	while (1)
+
 	{
-		printf("$ ");
-		nread = getline(&line, &len, stdin);
-		if (nread == -1)
-		{
+		printf("%s", prompt);
+		read = getline(&line, &len, stdin);
+		if (read == -1)
 			break;
-		}
-		printf("Typing area: %s", line);
+		if (line[read - 1] == '\n')
+			line[read - 1] = '\0';
+		if (access(line, F_OK) == 0)
+			execve(line, (char *[]) {line, NULL}, NULL);
+		else
+			printf("Command not found: %s\n", line);
 	}
 	free(line);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
